@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="parent(content)">
+      <h1>This is a parent fragment</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum dolores laborum illum explicabo officiis, quas facere iure ut nisi, amet mollitia corrupti suscipit ipsa hic vero, at assumenda est dolor.</p>
+        <p>following is the dynamic content</p>
+        <div th:replace="${content}"></div>
+    </div>
+    <div th:fragment="parnet2(content)">
+        <h1>You are logged out :</h1>
+    </div>
+</html>
