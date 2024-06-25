@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en"  th:replace="~{ base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8"
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >Document</title>
-    <link rel="stylesheet" href="/css/output.css">
-    
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../static/css/output.css">
 </head>
-<h1>This is a home page</h1>
+<body>
+    
+    <!-- Main Content -->
+    <div id="content" >
+        <h1 class="m-4" >This is Home Page </h1>
+        <div class="m-4">
+             <h2 >This is Dynamic section passed form Home SEction Section </h2>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, adipisci quia consequuntur quam facere incidunt dolores quis, iure voluptas amet repudiandae voluptatibus velit aperiam quidem! Commodi hic natus doloribus temporibus!</p>
+         </div>
+    </div>
+    <!-- Footer -->
+    <script>
+        console.log("about page");
+    </script>
+</body>
 </html>

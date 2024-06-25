@@ -1,17 +1,20 @@
 <!DOCTYPE html >
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"  th:replace="~{ base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About Page</title>
 </head>
 <body>
-    <h1>This is about page </h1>
-    <div th:replace="~{base :: parent(~{::section})}">
-        <section>
-            <h1>This is Dynamic section passed form About Section </h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, adipisci quia consequuntur quam facere incidunt dolores quis, iure voluptas amet repudiandae voluptatibus velit aperiam quidem! Commodi hic natus doloribus temporibus!</p>
-        </section>
+    <div id="content">
+        <h1>This is about Page </h1>
+        <div>
+             <h2>This is Dynamic section passed form About Section </h2>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, adipisci quia consequuntur quam facere incidunt dolores quis, iure voluptas amet repudiandae voluptatibus velit aperiam quidem! Commodi hic natus doloribus temporibus!</p>
+         </div>
     </div>
+    <script>
+        console.log("about page");
+    </script>
 </body>
 </html>

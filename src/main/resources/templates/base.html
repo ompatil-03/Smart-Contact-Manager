@@ -1,11 +1,36 @@
-<html xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="parent(content)">
-      <h1>This is a parent fragment</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum dolores laborum illum explicabo officiis, quas facere iure ut nisi, amet mollitia corrupti suscipit ipsa hic vero, at assumenda est dolor.</p>
-        <p>following is the dynamic content</p>
-        <div th:replace="${content}"></div>
-    </div>
-    <div th:fragment="parnet2(content)">
-        <h1>You are logged out :</h1>
-    </div>
+<!DOCTYPE html>
+<html  class="light "
+lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">Base Page</title>
+
+    <!-- Flowbite cdn link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Css file link -->
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+
+    <!-- Font awsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark:bg-gray-900 dark:text-white bg-gray-100">
+
+  <!-- Navigation Bar -->  
+  <div th:insert="~{navbar}"></div>
+
+  <!-- Main Content -->
+  <div>
+    <div th:replace="${content}">  </div>    
+  </div>
+    
+
+  <!-- Scripts here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <!-- Script form js folder  -->
+   <script th:src="@{/js/script.js}"></script>
+    <th:script-block th:replace="${script}">
+   </th:script-block>
+</body>
 </html>
